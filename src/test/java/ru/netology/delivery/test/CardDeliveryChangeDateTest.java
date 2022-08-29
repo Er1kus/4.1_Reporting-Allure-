@@ -297,16 +297,6 @@ public class CardDeliveryChangeDateTest {
         void shouldSetShortPhoneNumber() {
             var daysToAddForFirstMeeting = 4;
             var firstMeetingDate = DataGenerator.generateDate(daysToAddForFirstMeeting);
-            $("[data-test-id='phone'] input").setValue("6827144");
-            $x("//*[text()=\"Запланировать\"]").click();
-            $("[data-test-id='phone'].input_invalid .input__sub")
-                    .shouldBe(text("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678."));
-        }
-
-        @Test
-        void shouldSetOneSignPhoneNumber() {
-            var daysToAddForFirstMeeting = 4;
-            var firstMeetingDate = DataGenerator.generateDate(daysToAddForFirstMeeting);
             $("[data-test-id='phone'] input").setValue("7");
             $x("//*[text()=\"Запланировать\"]").click();
             $("[data-test-id='phone'].input_invalid .input__sub")
